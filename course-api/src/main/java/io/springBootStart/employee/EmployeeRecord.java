@@ -26,10 +26,12 @@ public class EmployeeRecord {
 		return employeeService.getEmployee(id);
 	}
 	
-//	@RequestMapping("/employee/{income}")
-//	public Employee getEmployeeByIncome(@PathVariable int income) {
-//		return employeeService.getEmployeeByIncome(income);
-//	}
+	@RequestMapping("/employee/department/{department}")
+	public List<Employee> getEmployeeByDepartment(@PathVariable String department) {
+		return employeeService.getEmployeeByDepartment(department);
+	}
+	
+	
 	
 	@RequestMapping(method = RequestMethod.POST, value = "/employee")
 	public void addEmployee(@RequestBody Employee employee) {
@@ -40,6 +42,13 @@ public class EmployeeRecord {
 	public void updateEmployee(@RequestBody Employee employee,@PathVariable int id ) {
 		employeeService.updateEmployee(id ,employee);
 	}
+	
+	
+//	@RequestMapping(method = RequestMethod.PUT, value = "/employee/department/{id}/{department}")
+//	public void updateEmployeeDepartment(@RequestBody Employee employee,@PathVariable int id ,@PathVariable String department ) {
+//		employeeService.updateEmployeeDepartment(department, employee);
+//	}
+	
 	
 	@RequestMapping(method = RequestMethod.DELETE, value = "/employee/{id}")
 	public void deleteEmployee(@PathVariable int id ) {

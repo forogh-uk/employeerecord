@@ -1,7 +1,11 @@
 package io.springBootStart.employee;
 
+import java.sql.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
+
+import org.hibernate.annotations.CreationTimestamp;
 
 @Entity
 
@@ -15,13 +19,28 @@ public class Employee {
 	private String postcode;
 	private int income;
 	private String department;
+	@CreationTimestamp
+    private Date createdAt;
 	
 	
 	
 	
 
 
-	public Employee(int id, String name, int payroll, String postcode, int income, String department) {
+	
+
+
+	
+	public Employee() {
+		
+	}
+	
+
+	
+	
+	
+	
+	public Employee(int id, String name, int payroll, String postcode, int income, String department, Date createdAt) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -29,24 +48,14 @@ public class Employee {
 		this.postcode = postcode;
 		this.income = income;
 		this.department = department;
+		this.createdAt = createdAt;
 	}
 
 
-	public Employee() {
-		
-	}
-	
-	
-	public Employee(int id, String name, int payroll, String postcode) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.payroll = payroll;
-		this.postcode = postcode;
-		
-	}
-	
-	
+
+
+
+
 	public int getId() {
 		return id;
 	}
@@ -92,22 +101,14 @@ public class Employee {
 	}
 
 
-	public Employee(int id, String name, int payroll, String postcode, int income) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.payroll = payroll;
-		this.postcode = postcode;
-		this.income = income;
+	public Date getCreatedAt() {
+		return createdAt;
 	}
 
+	public void setCreatedAt(Date createdAt) {
+		this.createdAt = createdAt;
+	}
 
-	
-
-
-	
-	
-	
 	
 
 }

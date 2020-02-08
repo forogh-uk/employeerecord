@@ -31,6 +31,8 @@ public class EmployeeService {
 		return employeeRepo.findOne(id);
 		
 	}
+	
+	
 
 
 	public void addEmployee(Employee employee) {
@@ -43,6 +45,11 @@ public class EmployeeService {
 		employeeRepo.save(employee);
 		
 	}
+	
+//	public void updateEmployeeDepartment(String department, Employee employee) {
+//		employeeRepo.save(employee);
+//		
+//	}
 
 
 	public void deleteEmployee(int id) {
@@ -51,8 +58,15 @@ public class EmployeeService {
 	}
 
 
-//	public Employee getEmployeeByIncome(int income) {
-//		return employeeRepo.findOne(income);
-//	}
+	public List<Employee> getEmployeeByDepartment(String department) {
+		
+		return employeeRepo.findByDepartment(department);
+	}
+
+
+	
+	
+
+
 
 }
