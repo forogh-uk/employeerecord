@@ -1,5 +1,6 @@
 package io.springBootStart.employee;
 
+import java.sql.Date;
 import java.util.Arrays;
 import java.util.List;
 
@@ -40,7 +41,11 @@ public class EmployeeRecord {
 	
 	
 	
-	
+	//date before
+//		@RequestMapping("/employee/income/{createdAt}")
+//		public List<Employee> getDateBefore(@PathVariable Date createdAt){
+//			return employeeService.getDateBefore(createdAt);
+//		}
 	
 	
 	@RequestMapping(method = RequestMethod.POST, value = "/employee")
@@ -51,6 +56,12 @@ public class EmployeeRecord {
 	@RequestMapping(method = RequestMethod.PUT, value = "/employee/{id}")
 	public void updateEmployee(@RequestBody Employee employee,@PathVariable int id ) {
 		employeeService.updateEmployee(id ,employee);
+	}
+	
+	//update department
+	@RequestMapping(method = RequestMethod.PUT, value = "/employee/department/{department}")
+	public void updateDepartment(@RequestBody Employee employee,@PathVariable String department ) {
+		employeeService.updateEmployeeDepartment(department ,employee);
 	}
 	
 

@@ -1,5 +1,6 @@
 package io.springBootStart.employee;
 
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -47,10 +48,11 @@ public class EmployeeService {
 		
 	}
 	
-//	public void updateEmployeeDepartment(String department, Employee employee) {
-//		employeeRepo.save(employee);
-//		
-//	}
+	//update department
+	public void updateEmployeeDepartment(String department, Employee employee) {
+		employeeRepo.save(employee);
+		
+	}
 
 
 	public void deleteEmployee(int id) {
@@ -70,6 +72,13 @@ public class EmployeeService {
 		
 		return employeeRepo.findByIncomeGreaterThan(income);
 	}
+	
+	
+	// income Greater Than 
+//		public List<Employee> getDateBefore(Date createdAt) {
+//			
+//			return employeeRepo.findByCreatedBefore(createdAt);
+//		}
 	
 	
 
