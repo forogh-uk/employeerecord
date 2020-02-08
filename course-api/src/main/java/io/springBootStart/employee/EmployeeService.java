@@ -6,6 +6,7 @@ import java.util.List;
 
 import org.hibernate.dialect.pagination.TopLimitHandler;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Service;
 
 //Business service
@@ -62,6 +63,15 @@ public class EmployeeService {
 		
 		return employeeRepo.findByDepartment(department);
 	}
+	
+
+
+	public List<Employee> getEmployeeByIncome(int income) {
+		
+		return employeeRepo.findByIncomeGreaterThan(income);
+	}
+	
+	
 
 
 	

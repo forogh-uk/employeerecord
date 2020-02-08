@@ -24,22 +24,11 @@ public class Employee {
 	
 	
 	
-	
-
-
-	
-
-
-	
 	public Employee() {
 		
 	}
 	
 
-	
-	
-	
-	
 	public Employee(int id, String name, int payroll, String postcode, int income, String department, Date createdAt) {
 		super();
 		this.id = id;

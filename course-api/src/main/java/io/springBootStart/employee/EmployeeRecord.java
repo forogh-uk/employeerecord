@@ -33,6 +33,16 @@ public class EmployeeRecord {
 	
 	
 	
+	@RequestMapping("/employee/income/{income}")
+	public List<Employee> getEmployeeByIncome(@PathVariable int income){
+		return employeeService.getEmployeeByIncome(income);
+	}
+	
+	
+	
+	
+	
+	
 	@RequestMapping(method = RequestMethod.POST, value = "/employee")
 	public void addEmployee(@RequestBody Employee employee) {
 		employeeService.addEmployee(employee);
@@ -43,12 +53,7 @@ public class EmployeeRecord {
 		employeeService.updateEmployee(id ,employee);
 	}
 	
-	
-//	@RequestMapping(method = RequestMethod.PUT, value = "/employee/department/{id}/{department}")
-//	public void updateEmployeeDepartment(@RequestBody Employee employee,@PathVariable int id ,@PathVariable String department ) {
-//		employeeService.updateEmployeeDepartment(department, employee);
-//	}
-	
+
 	
 	@RequestMapping(method = RequestMethod.DELETE, value = "/employee/{id}")
 	public void deleteEmployee(@PathVariable int id ) {
