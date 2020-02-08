@@ -33,8 +33,8 @@ public class EmployeeRecord {
 	}
 	
 	
-	//income greater than
-	@RequestMapping("/employee/income/{income}")
+	//income greater than 
+	@RequestMapping("/employee/incomegreater/{income}")
 	public List<Employee> getEmployeeByIncome(@PathVariable int income){
 		return employeeService.getEmployeeByIncome(income);
 	}
@@ -59,9 +59,9 @@ public class EmployeeRecord {
 	}
 	
 	//update department
-	@RequestMapping(method = RequestMethod.PUT, value = "/employee/department/{department}")
-	public void updateDepartment(@RequestBody Employee employee,@PathVariable String department ) {
-		employeeService.updateEmployeeDepartment(department ,employee);
+	@RequestMapping(method = RequestMethod.PUT, value = "/employee/department/{name}")
+	public void updateDepartment(@RequestBody Employee employee,@PathVariable String name ) {
+		employeeService.updateEmployeeDepartment(name ,employee);
 	}
 	
 

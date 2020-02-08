@@ -48,7 +48,7 @@ public class EmployeeService {
 		
 	}
 	
-	//update department
+	//update department 
 	public void updateEmployeeDepartment(String department, Employee employee) {
 		employeeRepo.save(employee);
 		

@@ -20,7 +20,7 @@ public interface EmployeeRepo extends JpaRepository<Employee, Integer> {
 	public List<Employee> findByIncomeGreaterThan(int income);
 		
 		
-		//update department
+		//update department 
 		@Modifying
 		@Query("update Employee e set e.department = ?1 where e.name = ?2")
 		int updateDepartment(String department, String name);
