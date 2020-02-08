@@ -41,11 +41,11 @@ public class EmployeeRecord {
 	
 	
 	
-	//date before
-//		@RequestMapping("/employee/income/{createdAt}")
-//		public List<Employee> getDateBefore(@PathVariable Date createdAt){
-//			return employeeService.getDateBefore(createdAt);
-//		}
+	//date after 
+		@RequestMapping("/employee/dateafter/{createdAt}")
+		public List<Employee> getDateAfter(@PathVariable Date createdAt){
+			return employeeService.getDateAfter(createdAt);
+		}
 	
 	
 	@RequestMapping(method = RequestMethod.POST, value = "/employee")

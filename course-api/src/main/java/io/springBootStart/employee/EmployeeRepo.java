@@ -2,6 +2,8 @@ package io.springBootStart.employee;
 
 
 
+
+import java.sql.Date;
 import java.util.List;
 import java.util.Set;
 
@@ -26,8 +28,8 @@ public interface EmployeeRepo extends JpaRepository<Employee, Integer> {
 		int updateDepartment(String department, String name);
 		
 	
-//		// Before
-//		@Query("SELECT d FROM Employee d WHERE d.created < ?1")
-//		List<Employee> findByCreatedBefore(Date createdAt);
+		// after
+		@Query("SELECT d FROM Employee d WHERE d.createdAt > ?1")
+		List<Employee> findByCreatedAfter(Date after);
 
 }

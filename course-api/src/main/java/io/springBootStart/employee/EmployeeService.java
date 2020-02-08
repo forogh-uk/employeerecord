@@ -74,11 +74,11 @@ public class EmployeeService {
 	}
 	
 	
-	// income Greater Than 
-//		public List<Employee> getDateBefore(Date createdAt) {
-//			
-//			return employeeRepo.findByCreatedBefore(createdAt);
-//		}
+	// date after  
+		public List<Employee> getDateAfter(Date createdAt) {
+			
+			return employeeRepo.findByCreatedAfter(createdAt);
+		}
 	
 	
 
