@@ -32,7 +32,7 @@ public class EmployeeRecord {
 	}
 	
 	
-	
+	//income greater than
 	@RequestMapping("/employee/income/{income}")
 	public List<Employee> getEmployeeByIncome(@PathVariable int income){
 		return employeeService.getEmployeeByIncome(income);

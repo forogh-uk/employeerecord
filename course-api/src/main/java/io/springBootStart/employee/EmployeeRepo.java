@@ -16,7 +16,7 @@ public interface EmployeeRepo extends JpaRepository<Employee, Integer> {
 
 
 
-	// Greater Than
+	// income Greater Than 
 		@Query("SELECT i FROM Employee i WHERE i.income > ?1")
 	public List<Employee> findByIncomeGreaterThan(int income);
 
