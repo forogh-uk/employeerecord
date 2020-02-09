@@ -46,6 +46,13 @@ public class EmployeeRecord {
 		public List<Employee> getDateAfter(@PathVariable Date createdAt){
 			return employeeService.getDateAfter(createdAt);
 		}
+		
+		
+		//income greate date after  
+		@RequestMapping("/employee/incomegreaterdateafter/{income}/{createdAt}")
+		public List<Employee> findByIncomeGreaterDateAfter(@PathVariable int income, @PathVariable Date createdAt){
+			return employeeService.findByIncomeGreaterDateAfter(income, createdAt);
+				}
 	
 	
 	@RequestMapping(method = RequestMethod.POST, value = "/employee")

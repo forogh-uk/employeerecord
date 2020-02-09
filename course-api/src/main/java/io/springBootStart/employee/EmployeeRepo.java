@@ -31,5 +31,10 @@ public interface EmployeeRepo extends JpaRepository<Employee, Integer> {
 		// after
 		@Query("SELECT d FROM Employee d WHERE d.createdAt > ?1")
 		List<Employee> findByCreatedAfter(Date after);
+		
+		
+		// income Greater Than and date after 
+		@Query("SELECT i FROM Employee i WHERE i.income > ?1 AND i.createdAt > ?2")
+		public List<Employee> findByIncomeGreaterDateAfter(int income, Date after);
 
 }

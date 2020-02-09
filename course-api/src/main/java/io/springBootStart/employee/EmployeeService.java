@@ -79,6 +79,13 @@ public class EmployeeService {
 			
 			return employeeRepo.findByCreatedAfter(createdAt);
 		}
+		
+		// find By Income Greater Date After
+		public List<Employee> findByIncomeGreaterDateAfter(int income,Date createdAt) {
+					
+				return employeeRepo.findByIncomeGreaterDateAfter(income, createdAt);
+		}	
+		
 	
 	
 
